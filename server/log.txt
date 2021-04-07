@@ -1,0 +1,1991 @@
+05:04:2021 19:45:17 ->  SQLSTATE[HY000]: General error: 1 no tables specified
+05:04:2021 19:46:14 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 19:47:08 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 19:47:58 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 19:48:59 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 19:57:43 ->  SQLSTATE[HY000]: General error: 1 no such column: admin
+05:04:2021 21:04:51 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:06:11 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:07:30 ->  Error socket bind
+05:04:2021 21:07:33 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:08:21 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:09:16 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:09:47 ->  SELECT
+					(CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END) as isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:10:04 ->  SELECT
+					(CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END) as isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:11:30 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:12:25 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:34:20 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:34:20 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 21:35:15 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:35:15 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 21:35:39 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:35:39 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 21:36:13 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:36:13 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 21:37:38 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:37:38 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 21:38:01 ->  SELECT
+					CASE
+						WHEN COUNT(user.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM user
+				WHERE user.login = 'admin'
+				AND user.password = 'admin'
+05:04:2021 21:38:01 ->  SQLSTATE[HY000]: General error: 1 no such table: user
+05:04:2021 21:38:40 ->  SELECT
+					CASE
+						WHEN COUNT(users.id) <= 0
+							THEN 0
+						ELSE 1
+					END isset
+				FROM users
+				WHERE users.login = 'admin'
+				AND users.password = 'admin'
+05:04:2021 22:11:16 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+05:04:2021 22:14:10 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+05:04:2021 22:14:30 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+05:04:2021 22:14:38 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 16:54:40 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 16:55:54 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 16:56:12 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 16:56:48 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 16:57:52 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 16:58:29 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:01:37 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:02:34 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:04:17 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:04:40 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:10:54 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:22:12 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:22:39 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:22:54 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:24:20 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:25:35 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:25:42 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:26:14 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:26:48 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:27:06 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:31:06 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:32:06 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:33:09 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:37:40 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:37:41 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:37:42 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:37:43 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:43:38 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:45:06 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:45:29 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:47:33 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:49:29 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:58:47 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:59:00 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:59:09 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:59:29 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 17:59:57 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:15:39 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:17:28 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:18:13 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:22:30 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:24:08 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:24:43 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:25:47 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:26:43 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:27:34 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:28:08 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:29:05 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:29:44 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:29:45 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:30:16 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:30:17 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:31:44 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:31:45 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:32:02 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:32:03 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:40:29 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:40:30 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:40:54 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:40:55 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:41:25 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:41:26 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:41:54 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:41:55 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:43:11 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:43:12 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:43:31 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:43:32 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:45:02 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:45:03 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:45:45 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:45:46 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 18:46:48 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 18:46:49 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 19:19:28 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 19:19:29 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 19:22:40 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 19:22:41 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 19:22:55 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 19:22:56 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 19:25:07 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+06:04:2021 19:25:08 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+06:04:2021 21:32:37 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:32:38 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND user_group.deleted <> 1
+06:04:2021 21:32:38 ->  SQLSTATE[HY000]: General error: 1 no such column: user_group.deleted
+06:04:2021 21:32:55 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:32:56 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND user_group.deleted <> 1
+06:04:2021 21:32:56 ->  SQLSTATE[HY000]: General error: 1 no such column: user_group.deleted
+06:04:2021 21:38:29 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:38:30 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 21:39:48 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:39:49 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 21:52:19 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:52:20 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 21:53:18 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:53:19 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 21:54:13 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:54:14 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 21:54:30 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:54:31 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 21:54:51 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:54:52 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 21:55:07 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 21:55:08 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+06:04:2021 22:15:57 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+06:04:2021 22:15:58 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:37:23 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:37:24 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:40:28 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:40:29 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:40:34 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:41:23 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:41:24 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:41:27 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test1'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:41:27 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test1'
+07:04:2021 13:42:29 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:42:30 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:42:34 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:42:34 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:48:57 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:48:58 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:49:02 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:49:02 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:50:30 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:50:31 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:50:33 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:50:33 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:51:11 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:51:12 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:51:14 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:51:14 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:52:00 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:52:01 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:52:03 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:52:03 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:52:13 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:52:14 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:52:19 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:52:19 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:53:27 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:53:28 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:53:31 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:53:31 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:55:01 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:55:02 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:55:05 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:55:05 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:56:04 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:56:05 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:56:07 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:56:07 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 13:57:06 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 13:57:07 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 13:57:09 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 13:57:09 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 14:33:40 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 14:33:41 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 14:34:20 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 14:34:21 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 14:34:27 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 14:34:28 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 14:35:54 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 14:35:55 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 14:35:57 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 14:35:57 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 14:54:18 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 14:54:19 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 14:54:22 ->  SELECT
+                        CASE 
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 14:54:22 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
+07:04:2021 15:31:20 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = ''
+                    AND users.password = ''
+                    AND users.deleted <> 1
+07:04:2021 15:32:15 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = ''
+                    AND users.password = ''
+                    AND users.deleted <> 1
+07:04:2021 15:34:27 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = ''
+                    AND users.password = ''
+                    AND users.deleted <> 1
+07:04:2021 15:36:06 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = ''
+                    AND users.password = ''
+                    AND users.deleted <> 1
+07:04:2021 15:36:49 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = ''
+                    AND users.password = ''
+                    AND users.deleted <> 1
+07:04:2021 15:37:28 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = ''
+                    AND users.password = ''
+                    AND users.deleted <> 1
+07:04:2021 15:38:40 ->  SELECT
+                        CASE
+                            WHEN COUNT(users.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END auth
+                    FROM users
+                    WHERE users.login = 'admin'
+                    AND users.password = 'admin'
+                    AND users.deleted <> 1
+07:04:2021 15:38:41 ->  SELECT
+                        groups.name,
+                        groups.info,
+                        (SELECT users.login
+                            WHERE users.id = groups.creater_id
+                        ) AS creator
+                    FROM users
+                    LEFT JOIN user_group AS ug ON ug.user_id = users.id
+                    LEFT JOIN groups ON groups.id = ug.group_id
+                    WHERE users.login = 'admin'
+                    AND users.deleted <> 1
+                    AND groups.deleted <> 1
+                    AND ug.deleted <> 1
+07:04:2021 15:38:44 ->  SELECT
+                        CASE
+                            WHEN count(user_group.id) <= 0
+                                THEN 0
+                            ELSE 1
+                        END isset
+                    FROM user_group
+                    INNER JOIN groups ON groups.name = 'test'
+                    INNER JOIN users ON users.login = 'admin'
+                    WHERE user_group.group_id = groups.id
+                    AND user_group.user_id = users.id
+07:04:2021 15:38:44 ->   SELECT
+                        messages.message,
+                        u.login,
+                        messages.date
+                    FROM messages
+                    INNER JOIN groups g on messages.group_id = g.id
+                    INNER JOIN users u on messages.user_id = u.id
+                    WHERE DATE(messages.date) = DATE('2021-04-07')
+                    AND g.name = 'test'
