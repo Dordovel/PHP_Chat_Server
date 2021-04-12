@@ -2,6 +2,9 @@
 #include <boost/asio.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
+#include <boost/archive/iterators/binary_from_base64.hpp>
+#include <boost/archive/iterators/base64_from_binary.hpp>
+#include <boost/archive/iterators/transform_width.hpp>
 #include <string>
 
 namespace asio = boost::asio;
@@ -14,6 +17,22 @@ struct ServerAddr
 };
 
 ServerAddr address = {"127.0.0.1", 7000};
+
+std::string str_from_base64(const std::string& data)
+{
+	using namespace boost::archive::iterators;
+
+	using It = transform_width<binary_from_base64<std::string::const_iterator>, 8, 6>;
+
+	return std::string(It(std::begin(data)), It(std::end(data)));
+}
+
+std::string str_to_base64(const std::string& str)
+{
+	using namespace boost::archive::iterators;
+	using It = base64_from_binary<transform_width<std::string::const_iterator, 6, 8>>;
+	return std::string(It(std::begin(str)), It(std::end(str)));
+}
 
 std::string read_ssl_key(std::string path)
 {
@@ -54,6 +73,11 @@ std::string get_string_json(const json::ptree& json)
 
 int main()
 {
+	std::string base64 = "dGVzdA==";
+	std::cout<<base64<<":"<<str_from_base64(base64)<<":"<< str_to_base64(str_from_base64(base64))<<std::endl;
+
+	return EXIT_SUCCESS;
+
 	std::string privKey = read_ssl_key("priv.txt");
 	std::string pubKey = read_ssl_key("pub.txt");
 
