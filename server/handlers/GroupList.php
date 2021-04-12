@@ -4,7 +4,7 @@
     {
         private $_db;
 
-        const GroupList = 'Groups';
+        private $GroupList = 'Groups';
 
         public function __construct(Connection $db)
         {
@@ -30,20 +30,31 @@
             return $this->_db->query($q)->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        private function validate($client)
+        {
+            if(!isset($client[Type::AUTORIZATION]))
+                return false;
+
+            if(!$client[Type::AUTORIZATION][Authorization::USER_AUTH])
+                return false;
+
+            return true;
+        }
+
         private function exec(&$client)
         {
-            if($client[Type::AUTOINTIFICATION][Authorization::USER_AUTH])
+            $response = array("Type"=>Type::GROUP_LIST,
+                $this->GroupList => array());
+
+            if($this->validate($client))
             {
-                $login = $client[Type::AUTOINTIFICATION][Authorization::USER_LOGIN];
+                $login = $client[Type::AUTORIZATION][Authorization::USER_LOGIN];
                 $groupList = $this->get_user_group_list($login);
 
-                $responce = array("Type"=>Type::GROUP_LIST,
-                                    GroupList::GroupList => $groupList);
-
-                return Data::encode($responce);
+                $response[$this->GroupList] = $groupList;
             }
 
-            return Data::encode(array());
+            return Data::encode($response);
         }
 
         public function execute(&$client, $request)

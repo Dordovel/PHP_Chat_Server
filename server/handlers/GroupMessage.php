@@ -5,10 +5,10 @@
         private $_db;
         private $_ssl;
 
-        const Message = 'Msg';
-        const Sender = 'Sender';
-        const SendDate = 'Date';
-        const Messages = 'Messages';
+        private $Message = 'Msg';
+        private $Sender = 'Sender';
+        private $SendDate = 'Date';
+        private $Messages = 'Messages';
 
         public function __construct(Connection $db, SSL $ssl)
         {
@@ -33,7 +33,7 @@
             return $this->_db->query($q)->fetch(PDO::FETCH_ASSOC)['isset'];
         }
 
-        private function get_group_messages($group, $date)
+        private function get_group_messages($group)
         {
             $q = " SELECT
                         messages.message,
@@ -42,8 +42,7 @@
                     FROM messages
                     INNER JOIN groups g on messages.group_id = g.id
                     INNER JOIN users u on messages.user_id = u.id
-                    WHERE DATE(messages.date) = DATE('$date')
-                    AND g.name = '$group'";
+                    WHERE g.name = '$group'";
 
             return $this->_db->query($q)->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -56,34 +55,54 @@
             {
                 $encodeMsg = $this->_ssl->encrypt_rsa($pubKey, $message['message']);
 
-                $data[GroupMessage::Message] = base64_encode($encodeMsg);
-                $data[GroupMessage::Sender] = $message['login'];
-                $data[GroupMessage::SendDate] = $message['date'];
+                $data[$this->Message] = $encodeMsg;
+                $data[$this->Sender] = $message['login'];
+                $data[$this->SendDate] = $message['date'];
             }
 
             return $data;
         }
 
+        private function validate($client, $request)
+        {
+            if(!isset($client[Type::HANDSHAKE]))
+                return false;
+
+            if(!isset($client[Type::AUTORIZATION]))
+                return false;
+
+            if(!$client[Type::AUTORIZATION][Authorization::USER_AUTH])
+                return false;
+
+            if(!isset($request->Group))
+                return false;
+
+            if(!isset($request->Date))
+                return false;
+
+            return true;
+        }
+
         private function exec(&$client, $request)
         {
-            $responceData = array("Type" => Type::GROUP_MESSAGES,
-                                    GroupMessage::Messages => array());
+            $response = array("Type" => Type::GROUP_MESSAGES,
+                                    $this->Messages => array());
 
-            if($client[Type::AUTOINTIFICATION][Authorization::USER_AUTH])
+            if($this->validate($client, $request))
             {
                 $login = $client[Type::AUTOINTIFICATION][Authorization::USER_LOGIN];
 
                 if($this->check_user_subscribe($login, $request->Group))
                 {
                     $pubKey = $client[Type::HANDSHAKE][Handshake::PUBLIC_KEY];
-                    $groupMessages = $this->get_group_messages($request->Group, $request->Date);
+                    $groupMessages = $this->get_group_messages($request->Group);
                     $messages = $this->convert_messages($pubKey, $groupMessages);
 
-                    $responceData[GroupMessage::Messages] = $messages;
+                    $response[$this->Messages] = $messages;
                 }
             }
 
-            return Data::encode($responceData);
+            return Data::encode($response);
         }
 
         public function execute(&$client, $request)

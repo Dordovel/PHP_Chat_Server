@@ -125,9 +125,8 @@
                     }
 
                     $request = $this->get_request($data);
-
-                    $responce = $this->call_handler($changedSocket, $request);
-					socket_write($changedSocket, $responce, strlen($responce));
+                    $response = $this->call_handler($changedSocket, $request);
+					socket_write($changedSocket, $response, strlen($response));
                 }
             }
         }

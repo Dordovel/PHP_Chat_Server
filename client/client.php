@@ -26,18 +26,16 @@
 
 	socket_write($socket, $connectionQuery, strlen($connectionQuery));
 
-	sleep(1);
-
 	$data = read_from_socket($socket);
 
-	$responce = Data::decode($data);
+	$response = Data::decode($data);
 
-	$pass = $ssl->encrypt_rsa($responce->Key, "admin");
-	$log = $ssl->encrypt_rsa($responce->Key, "admin");
+	$pass = $ssl->encrypt_rsa($response->Key, "admin");
+	$log = $ssl->encrypt_rsa($response->Key, "admin");
 
-	$authQuery = Data::encode(array("Type"=>Type::AUTOINTIFICATION,
-									"Login" => base64_encode($log),
-									"Password" => base64_encode($pass)));
+	$authQuery = Data::encode(array("Type"=>Type::AUTORIZATION,
+									"Login" => $log,
+									"Password" => $pass));
 
 	socket_write($socket, $authQuery, strlen($authQuery));
 
@@ -45,43 +43,46 @@
 
 	$data = read_from_socket($socket);
 
-	$responce = Data::decode($data);
+	if(!$data) exit;
 
-	if($responce->Type == Type::AUTOINTIFICATION
-		&& $responce->Status == ResponceStatus::OK)
+	$response = Data::decode($data);
+
+	if($response->Type == Type::AUTORIZATION
+		&& $response->Status == ResponceStatus::OK)
 	{
 		$groupQuery = Data::encode(array("Type" => Type::GROUP_LIST));
 
-		socket_write($socket, $groupQuery);
+		socket_write($socket, $groupQuery, strlen($groupQuery));
 
 		sleep(1);
 
 		$data = read_from_socket($socket);
 
-		$responce = Data::decode($data);
+		$response = Data::decode($data);
 
-		if ($responce->Type == Type::GROUP_LIST)
+		if ($response->Type == Type::GROUP_LIST)
 		{
-			foreach ($responce->Groups as $index => $group)
+			foreach ($response->Groups as $index => $group)
 			{
-				echo ($index + 1), ": Name: ", $group->name, " Info: ", $group->info, " Creater: ", $group->creator, "\n";
+				echo ($index + 1), ": Name: ", $group->name,
+						" Info: ", $group->info,
+						" Creater: ", $group->creator, "\n";
 			}
 
 			$input = readline("Select group->");
-			$group = $responce->Groups[$input - 1]->name;
+			$group = $response->Groups[$input - 1]->name;
 			echo date('Y-m-d'), "  Select: ", $group, "\n";
 			$messageQuery = Data::encode(array('Type' => Type::GROUP_MESSAGES,
-							"Group" => $group,
-							"Date" => date('Y-m-d')));
+							"Group" => $group));
 
-			socket_write($socket, $messageQuery);
+			socket_write($socket, $messageQuery, strlen($messageQuery));
 
 			sleep(1);
 
 			$data = read_from_socket($socket);
-			$responce = Data::decode($data);
+			$response = Data::decode($data);
 
-			var_dump($responce);
+			var_dump($response);
 		}
 	}
 ?>

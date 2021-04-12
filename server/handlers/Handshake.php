@@ -6,7 +6,7 @@
     {
         const PUBLIC_KEY = "handshake_pub_key";
         const PRIVATE_KEY = "handshake_priv_key";
-        const RsaPublicKey = 'Key';
+        private $RsaPublicKey = 'Key';
 
         private $_ssl;
 
@@ -15,20 +15,36 @@
             $this->_ssl = $ssl;
         }
 
+        private function validate($request)
+        {
+            if(!isset($request->{$this->RsaPublicKey}))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private function exec(&$client, $request)
         {
-            $privateServerRSAkey = $this->_ssl->generate_private_rsa_key();
-            $publicServerRSAKey = $this->_ssl->generate_public_rsa_key();
+            $response = array("Type" => Type::HANDSHAKE,
+                $this->RsaPublicKey => ResponceStatus::FAILD);
 
-            $publicUserRSAKey = $request->{Handshake::RsaPublicKey};
+            if($this->validate($request))
+            {
+                $privateServerRSAKey = $this->_ssl->generate_private_rsa_key();
+                $publicServerRSAKey = $this->_ssl->generate_public_rsa_key();
 
-            $client[Type::HANDSHAKE][Handshake::PUBLIC_KEY] = $publicUserRSAKey;
-            $client[Type::HANDSHAKE][Handshake::PRIVATE_KEY] = $privateServerRSAkey;
+                $publicUserRSAKey = $request->{$this->RsaPublicKey};
 
-            $responce = array("Type" => Type::HANDSHAKE,
-                                Handshake::RsaPublicKey => $publicServerRSAKey);
+                $client[Type::HANDSHAKE][Handshake::PUBLIC_KEY] = $publicUserRSAKey;
+                $client[Type::HANDSHAKE][Handshake::PRIVATE_KEY] = $privateServerRSAKey;
 
-            return Data::encode($responce);
+                $response = array("Type" => Type::HANDSHAKE,
+                    $this->RsaPublicKey => $publicServerRSAKey);
+            }
+
+            return Data::encode($response);
         }
 
         public function execute(&$client, $request)

@@ -10,9 +10,9 @@
         private $_db;
         private $_ssl;
 
-        const Login = 'Login';
-        const Password = 'Password';
-        const AuthStatus = 'Status';
+        private $Login = 'Login';
+        private $Password = 'Password';
+        private $AuthStatus = 'Status';
 
         public function __construct(Connection $db, SSL $ssl)
         {
@@ -29,7 +29,7 @@
                 return false;
 
             $data = $this->_ssl->decrypt_rsa($privKey,
-                                base64_decode($request->{$field}));
+                                $request->{$field});
 
             return $data;
         }
@@ -52,33 +52,52 @@
             return $user['auth'];
         }
 
+        private function validate($client, $request)
+        {
+            if(!isset($client[Type::HANDSHAKE]))
+                return false;
+
+            if(empty($request))
+                return false;
+
+            if(!isset($request->{$this->Login}))
+                return false;
+
+            if(!isset($request->{$this->Password}))
+                return false;
+
+            return true;
+        }
+
         private function exec(&$client, $request)
         {
-            $status = ResponceStatus::FAILD;
+            $response = array("Type" => Type::AUTORIZATION,
+                $this->AuthStatus => ResponceStatus::FAILD);
 
-            $sslKey = $client[Type::HANDSHAKE][Handshake::PRIVATE_KEY];
-
-            $login = $this->get_decode_data(Authorization::Login, $sslKey, $request);
-            $pass = $this->get_decode_data(Authorization::Password, $sslKey, $request);
-
-            $client[Type::AUTOINTIFICATION][Authorization::USER_AUTH] = false;
-
-            if($this->try_auth_user($login, $pass))
+            if($this->validate($client, $request))
             {
-                $status = ResponceStatus::OK;
-                $client[Type::AUTOINTIFICATION][Authorization::USER_AUTH] = true;
-                $client[Type::AUTOINTIFICATION][Authorization::USER_LOGIN] = $login;
+                $sslKey = $client[Type::HANDSHAKE][Handshake::PRIVATE_KEY];
+
+                $login = $this->get_decode_data($this->Login, $sslKey, $request);
+                $pass = $this->get_decode_data($this->Password, $sslKey, $request);
+
+                $client[Type::AUTORIZATION][Authorization::USER_AUTH] = false;
+
+                if ($this->try_auth_user($login, $pass))
+                {
+                    $client[Type::AUTORIZATION][Authorization::USER_AUTH] = true;
+                    $client[Type::AUTORIZATION][Authorization::USER_LOGIN] = $login;
+
+                    $response[$this->AuthStatus] = ResponceStatus::OK;
+                }
             }
 
-            $responceData = array("Type" => Type::AUTOINTIFICATION,
-                                Authorization::AuthStatus => $status);
-
-            return Data::encode($responceData);
+            return Data::encode($response);
         }
 
         public function execute(&$client, $request)
         {
-            if($request->Type == Type::AUTOINTIFICATION)
+            if($request->Type == Type::AUTORIZATION)
                 return $this->exec($client, $request);
 
             return parent::execute($client, $request);

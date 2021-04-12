@@ -28,7 +28,6 @@
          */
         public function query($query)
         {
-            $this->_logger->log($query);
             $stmt = null;
 
             try
