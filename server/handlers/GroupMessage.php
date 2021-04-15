@@ -20,17 +20,22 @@
         {
             $q = "SELECT
                         CASE
-                            WHEN count(user_group.id) <= 0
+                            WHEN count(*) <= 0
                                 THEN 0
                             ELSE 1
                         END isset
                     FROM user_group
-                    INNER JOIN groups ON groups.name = '$group'
-                    INNER JOIN users ON users.login = '$login'
+                    INNER JOIN groups ON groups.name = ?
+                    INNER JOIN users ON users.login = ?
                     WHERE user_group.group_id = groups.id
                     AND user_group.user_id = users.id";
 
-            return $this->_db->query($q)->fetch(PDO::FETCH_ASSOC)['isset'];
+            $connection = $this->_db->connection();
+            $stmt = $connection->prepare($q);
+            $stmt->bindParam(1, $login, PDO::PARAM_STR);
+            $stmt->bindParam(2, $group, PDO::PARAM_STR);
+
+            return $stmt->fetch(PDO::FETCH_ASSOC)['isset'];
         }
 
         private function get_group_messages($group)
@@ -42,9 +47,13 @@
                     FROM messages
                     INNER JOIN groups g on messages.group_id = g.id
                     INNER JOIN users u on messages.user_id = u.id
-                    WHERE g.name = '$group'";
+                    WHERE g.name = '?'";
 
-            return $this->_db->query($q)->fetchAll(PDO::FETCH_ASSOC);
+            $connection = $this->_db->connection();
+            $stmt = $connection->prepare($q);
+            $stmt->bindParam(1, $group, PDO::PARAM_STR);
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         private function convert_messages($pubKey, $messageList)
@@ -90,7 +99,7 @@
 
             if($this->validate($client, $request))
             {
-                $login = $client[Type::AUTOINTIFICATION][Authorization::USER_LOGIN];
+                $login = $client[Type::AUTORIZATION][Authorization::USER_LOGIN];
 
                 if($this->check_user_subscribe($login, $request->Group))
                 {

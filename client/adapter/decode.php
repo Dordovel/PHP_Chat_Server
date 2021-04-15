@@ -1,24 +1,25 @@
 <?php
-    function encrypt_rsa($publicKey, $data)
-    {
-        if(empty($publicKey) || empty($data)) return "";
-        $encryptData = "";
-        openssl_public_encrypt($data, $encryptData, $publicKey);
+	require_once("../../classes/SSL.php");
 
-        return $encryptData;
-    }
+	$ssl = new SSL();
 
-    function decrypt_rsa($privateKey, $data)
-    {
-        if(empty($privateKey) || empty($data)) return "";
-
-        $decryptData = "";
-        openssl_private_decrypt($data, $decryptData, $privateKey);
-
-        return $decryptData;
-    }
-
-
-	if(in_array("--decode", $argv))
-		echo "DAta";
+	if(($index = array_search("--decode", $argv)) !== false)
+	{
+		echo $argv[$index + 1];
+	}
+	elseif(($index = array_search("--encode", $argv)) !== false)
+	{
+		echo $argv[$index + 1];
+	}
+	elseif(($index = array_search("--generate", $argv)) !== false)
+	{
+		if(strpos("private", $argv[$index + 1]) !== false)
+		{
+			echo $ssl->generate_private_rsa_key();
+		}
+		elseif(strpos("public", $argv[$index + 1]) !== false)
+		{
+			echo $ssl->generate_public_rsa_key();
+		}
+	}
 ?>

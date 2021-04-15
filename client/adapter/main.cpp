@@ -5,7 +5,6 @@
 #include <libgen.h>
 #include <array>
 
-
 std::string get_path()
 {
 	std::string path = "";
@@ -21,34 +20,57 @@ std::string get_path()
 enum class Type
 {
 	ENCODE,
-	DECODE
+	DECODE,
+	PRIVATE,
+	PUBLIC
 };
 
-std::string ssl(const std::string& str, Type type)
+std::string get_query_type(Type type)
 {
+	std::string params = "";
+
+	switch(type)
+	{
+		case Type::DECODE:
+			params = "--decode";
+		break;
+		case Type::ENCODE:
+			params = "--encode";
+		break;
+		case Type::PRIVATE:
+			params = "--generate private";
+		break;
+		case Type::PUBLIC:
+			params = "--generate public";
+		break;
+		default: break;
+	}
+
+	return params;
+}
+
+std::string create_query(std::string exec, std::string file, Type type, const std::string& query)
+{
+	std::string params = get_query_type(type);
+
 	std::string path = get_path();
 
-	const std::string exec = "php";
-	const std::string file = "decode.php";
-
-	std::string params;
-
-	if(type == Type::DECODE)
-		params = "--decode";
-	else if(type == Type::ENCODE)
-		params = "--encode";
-
-
-	const std::string decoder = exec +
-							" " + path + "/" +
+	std::string q = exec + " " + path + "/" +
 							file + " " + params +
-							" " + str;
+							" " + query;
+
+	return q;
+}
+
+std::string ssl(Type type, std::string str = "")
+{
+	const std::string query = create_query("php", "decode.php", type, str);
 
 	char buffer[128];
 
 	std::string data;
 
-	FILE* pipe = popen(decoder.c_str(), "r");
+	FILE* pipe = popen(query.c_str(), "r");
 
 	if(!pipe) throw std::runtime_error("pipe not open");
 
@@ -74,7 +96,7 @@ std::string ssl(const std::string& str, Type type)
 int main()
 {
 
-	std::cout<<ssl("jsdlfjasdf", Type::DECODE)<<std::endl;
+	std::cout<<ssl(Type::PRIVATE)<<std::endl;
 
 	return EXIT_SUCCESS;
 }

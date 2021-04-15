@@ -38,16 +38,23 @@
         {
             $q = "SELECT
                         CASE
-                            WHEN COUNT(users.id) <= 0
+                            WHEN COUNT(*) <= 0
                                 THEN 0
                             ELSE 1
                         END auth
                     FROM users
-                    WHERE users.login = '$login'
-                    AND users.password = '$password'
+                    WHERE users.login = ?
+                    AND users.password = ?
                     AND users.deleted <> 1";
 
-            $user = $this->_db->query($q)->fetch(PDO::FETCH_ASSOC);
+            $connection = $this->_db->connection();
+            $stmt = $connection->prepare($q);
+            $stmt->bindParam(1, $login, PDO::PARAM_STR);
+            $stmt->bindParam(2, $password, PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             return $user['auth'];
         }

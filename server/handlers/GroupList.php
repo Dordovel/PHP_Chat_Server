@@ -22,12 +22,17 @@
                     FROM users
                     LEFT JOIN user_group AS ug ON ug.user_id = users.id
                     LEFT JOIN groups ON groups.id = ug.group_id
-                    WHERE users.login = '$login'
+                    WHERE users.login = ?
                     AND users.deleted <> 1
                     AND groups.deleted <> 1
                     AND ug.deleted <> 1";
 
-            return $this->_db->query($q)->fetchAll(PDO::FETCH_ASSOC);
+            $connection = $this->_db->connection();
+            $stmt = $connection->prepare($q);
+            $stmt->bindParam(1, $login, PDO::PARAM_STR);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         private function validate($client)

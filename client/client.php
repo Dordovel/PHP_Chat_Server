@@ -33,6 +33,10 @@
 	$pass = $ssl->encrypt_rsa($response->Key, "admin");
 	$log = $ssl->encrypt_rsa($response->Key, "admin");
 
+	file_put_contents("cPub.pub", $response->Key);
+	file_put_contents("cPriv.priv", $response->Key);
+	file_put_contents("cPriv.pass", $pass);
+
 	$authQuery = Data::encode(array("Type"=>Type::AUTORIZATION,
 									"Login" => $log,
 									"Password" => $pass));
@@ -57,7 +61,6 @@
 		sleep(1);
 
 		$data = read_from_socket($socket);
-
 		$response = Data::decode($data);
 
 		if ($response->Type == Type::GROUP_LIST)

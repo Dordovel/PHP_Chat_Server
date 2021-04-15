@@ -24,22 +24,11 @@
         }
 
         /**
-         * @return PDOStatement
+         * @return PDO
          */
-        public function query($query)
+        public function connection()
         {
-            $stmt = null;
-
-            try
-            {
-                $stmt = $this->_pdo->query($query);
-            }
-            catch(PDOException $ex)
-            {
-                $this->_logger->log($ex->getMessage());
-            }
-
-            return $stmt;
+            return $this->_pdo;
         }
     };
 
