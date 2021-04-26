@@ -10,6 +10,7 @@
 	elseif(($index = array_search("--encode", $argv)) !== false)
 	{
 		echo $argv[$index + 1];
+		echo $argv[$index + 2];
 	}
 	elseif(($index = array_search("--generate", $argv)) !== false)
 	{

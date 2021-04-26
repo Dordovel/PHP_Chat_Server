@@ -85,6 +85,8 @@ int main()
 	std::string privKey = read_ssl_key("priv.txt");
 	std::string pubKey = read_ssl_key("pub.txt");
 
+	return EXIT_SUCCESS;
+
 	std::map<std::string, std::string> data;
 	data.emplace("Type", "3");
 	data.emplace("Key", pubKey);
