@@ -121,6 +121,18 @@ std::string create_query(Type type, T&&... argv)
 	return q;
 }
 
+std::string read_from_fd(FILE* fd)
+{
+	std::string res;
+
+	const int CAPACITY = 1024;
+	char line[CAPACITY];
+
+	while(fgets(line, CAPACITY, fd))
+		res.append(line, strlen(line));
+
+	return res;
+}
 
 std::string read(const std::string& path)
 {
@@ -128,12 +140,7 @@ std::string read(const std::string& path)
 
 	if(FILE* stream = fopen(path.c_str(), "rb"))
 	{
-		const int CAPACITY = 1024;
-		char line[CAPACITY];
-
-		while(fgets(line, CAPACITY, stream))
-			res.append(line, strlen(line));
-
+		res = read_from_fd(stream);
 		fclose(stream);
 	}
 
@@ -164,12 +171,7 @@ std::string pipe_read(const std::string& query)
 
 	if(FILE* pipe = popen(query.c_str(), "r"))
 	{
-		const int CAPACITY = 1024;
-		char line[CAPACITY];
-
-		while(fgets(line, CAPACITY, pipe))
-			res.append(line, strlen(line));
-
+		res = read_from_fd(pipe);
 		pclose(pipe);
 	}
 
@@ -248,8 +250,10 @@ int main()
 {
 	auto keys = ssl_keys();
 	std::string encode = ssl_encode("Test", keys["PUBLIC"]);
+	std::cout<<"Encode: "<<encode<<std::endl;
+
 	std::string decode = ssl_decode(encode, keys["PRIVATE"]);
-	std::cout<<decode<<std::endl;
+	std::cout<<"Decode: "<<decode<<std::endl;
 
 	return EXIT_SUCCESS;
 }
