@@ -3,24 +3,39 @@
 
 	$ssl = new SSL();
 
-	if(($index = array_search("--decode", $argv)) !== false)
+	function read_key()
 	{
-		echo $argv[$index + 1];
+		$key = "";
+
+		while($line = fgets(STDIN, 2048))
+			$key .= $line;
+
+		return $key;
+	}
+
+if(($index = array_search("--decode", $argv)) !== false)
+	{
+		if(($indexPipe = array_search("--pipe", $argv)) !== false)
+		{
+			$key = read_key();
+
+			$msg = file_get_contents($argv[$indexPipe + 1]);
+			file_put_contents($argv[$indexPipe + 1], $ssl->decrypt_rsa($key, $msg));
+		}
 	}
 	elseif(($index = array_search("--encode", $argv)) !== false)
 	{
-		echo $argv[$index + 1];
-		echo $argv[$index + 2];
+		if(($indexPipe = array_search("--pipe", $argv)) !== false)
+		{
+		    $key = read_key();
+
+			$msg = file_get_contents($argv[$indexPipe + 1]);
+			file_put_contents($argv[$indexPipe + 1], $ssl->encrypt_rsa($key, $msg));
+		}
 	}
 	elseif(($index = array_search("--generate", $argv)) !== false)
 	{
-		if(strpos("private", $argv[$index + 1]) !== false)
-		{
-			echo $ssl->generate_private_rsa_key();
-		}
-		elseif(strpos("public", $argv[$index + 1]) !== false)
-		{
-			echo $ssl->generate_public_rsa_key();
-		}
+		echo $ssl->generate_private_rsa_key();
+		echo $ssl->generate_public_rsa_key();
 	}
 ?>
