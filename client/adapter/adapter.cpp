@@ -197,39 +197,33 @@ std::string exec(Pipe pipe, const std::string& query, std::string msg = "")
 	return res;
 }
 
-std::string ssl_encode(const std::string& msg,
-					   const std::string& publicKey)
+std::string ssl_encrypt(Type type, const std::string& msg,
+						const std::string& key)
 {
 	std::string res;
 	std::string pipeline = "pipe";
 
 	write(pipeline, msg);
 
-	std::string query = create_query(Type::ENCODE, Type::PIPE, pipeline);
+	std::string query = create_query(type, Type::PIPE, pipeline);
 
-	exec(Pipe::WRITE, query, publicKey);
+	exec(Pipe::WRITE, query, key);
 
 	res = read(pipeline);
 
 	return res;
 }
 
+std::string ssl_encode(const std::string& msg,
+					   const std::string& publicKey)
+{
+	return ssl_encrypt(Type::ENCODE, msg, publicKey);
+}
+
 std::string ssl_decode(const std::string& msg,
 					   const std::string& privateKey)
 {
-	std::string res;
-
-	std::string pipeline = "pipe";
-
-	write(pipeline, msg);
-
-	std::string query = create_query(Type::DECODE, Type::PIPE, pipeline);
-
-	exec(Pipe::WRITE, query, privateKey);
-
-	res = read(pipeline);
-
-	return res;
+	return ssl_encrypt(Type::DECODE, msg, privateKey);
 }
 
 std::unordered_map<std::string, std::string> ssl_keys()
