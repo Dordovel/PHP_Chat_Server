@@ -43,25 +43,6 @@ std::string str_to_base64(const std::string& str)
 	return std::string(It(std::begin(str)), It(std::end(str)));
 }
 
-std::string read_ssl_key(std::string path)
-{
-	std::string key;
-	std::ifstream stream(path, std::ios::binary);
-
-	if(stream.is_open())
-	{
-		char buffer;
-		while(stream.get(buffer))
-		{
-			key.push_back(buffer);
-		}
-	}
-
-	stream.close();
-
-	return key;
-}
-
 json::ptree create_json(std::map<std::string, std::string> map)
 {
 	json::ptree root;

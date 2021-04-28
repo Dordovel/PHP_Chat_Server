@@ -5,4 +5,8 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-Wall -g")
 
 add_executable(${PROJECT_NAME}
-        adapter.cpp)
+        src/File.cpp
+        src/Pipe.cpp
+        src/Query.cpp
+        src/Ssl.cpp
+        main.cpp)
