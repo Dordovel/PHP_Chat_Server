@@ -7,6 +7,8 @@
 #include <boost/archive/iterators/transform_width.hpp>
 #include <string>
 
+#include "adapter/header/Ssl.h"
+
 namespace asio = boost::asio;
 namespace json = boost::property_tree;
 
@@ -61,26 +63,33 @@ std::string get_string_json(const json::ptree& json)
 	return stream.str();
 }
 
-int main()
+asio::ip::tcp::socket connect(asio::io_service& service, ServerAddr address)
 {
-	std::string privKey = read_ssl_key("priv.txt");
-	std::string pubKey = read_ssl_key("pub.txt");
-
-	return EXIT_SUCCESS;
-
-	std::map<std::string, std::string> data;
-	data.emplace("Type", "3");
-	data.emplace("Key", pubKey);
-
-	auto pt = create_json(data);
-
-	asio::io_service service;
-
 	asio::ip::tcp::socket socket(service);
 
 	asio::ip::tcp::endpoint endPoint(asio::ip::address::from_string(address.addr), address.port);
 
 	socket.connect(endPoint);
+
+	return socket;
+}
+
+int main()
+{
+	Ssl ssl;
+	auto rsaKeys = ssl.ssl_keys();
+	std::string privKey = rsaKeys["PRIVATE"];
+	std::string pubKey = rsaKeys["PUBLIC"];
+
+	std::map<std::string, std::string> data;
+	data.emplace("Type", str_to_base64("3"));
+	data.emplace("Key", str_to_base64(pubKey));
+
+	auto pt = create_json(data);
+
+	asio::io_service service;
+
+	asio::ip::tcp::socket socket = connect(service, address);
 
 	asio::write(socket, asio::buffer(get_string_json(pt)));
 
@@ -95,7 +104,7 @@ int main()
 	s << &buffer;
 	json::read_json(s, json);
 
-	std::cout<<json.get<std::string>("Key")<<std::endl;
+	std::cout<<str_from_base64(json.get<std::string>("Key"))<<std::endl;
 
 	return EXIT_SUCCESS;
 }

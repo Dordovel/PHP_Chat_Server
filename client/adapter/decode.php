@@ -1,5 +1,5 @@
 <?php
-	require_once("../../classes/SSL.php");
+	require_once("../classes/SSL.php");
 
 	$ssl = new SSL();
 

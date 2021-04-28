@@ -74,7 +74,7 @@ class Query
 		template<typename ...T>
 		std::string create_query(Query::Type type, T&&... argv)
 		{
-			std::string q = query("php", "decode.php", type,
+			std::string q = query("php", "adapter/decode.php", type,
 			                      std::forward<T>(argv)...);
 			return q;
 		}

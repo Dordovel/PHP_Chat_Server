@@ -4,7 +4,10 @@ project(client)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-Wall -g")
 
+file(GLOB ADAPTER_SOURCE_FILES ${CMAKE_SOURCE_DIR}/adapter/src/*.cpp)
+
 add_executable(${PROJECT_NAME}
+        ${ADAPTER_SOURCE_FILES}
         client.cpp)
 
 find_package(Threads)
