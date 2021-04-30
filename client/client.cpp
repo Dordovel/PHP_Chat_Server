@@ -8,6 +8,7 @@
 #include <string>
 
 #include "adapter/header/Ssl.h"
+#include "header/Data.h"
 
 namespace asio = boost::asio;
 namespace json = boost::property_tree;
@@ -45,7 +46,7 @@ std::string str_to_base64(const std::string& str)
 	return std::string(It(std::begin(str)), It(std::end(str)));
 }
 
-json::ptree create_json(std::map<std::string, std::string> map)
+json::ptree create_json(const std::map<std::string, std::string>& map)
 {
 	json::ptree root;
 	for(auto&& [key, value] : map)
@@ -86,6 +87,45 @@ int main()
 	data.emplace("Key", str_to_base64(pubKey));
 
 	auto pt = create_json(data);
+
+	json::ptree tree;
+	json::ptree child;
+	json::ptree chil1, chil2;
+	chil1.put("name", "1");
+	chil1.put("info", "2");
+	chil1.put("creator", "3");
+
+	chil2.put("name", "1");
+	chil2.put("info", "2");
+	chil2.put("creator", "3");
+
+	child.push_back(std::make_pair("", chil1));
+	child.push_back(std::make_pair("", chil2));
+
+	tree.put("Type", "3");
+	tree.add_child("Group", child);
+
+	std::cout<<get_string_json(tree)<<std::endl;
+
+	Data response;
+	response.add_value("Type", "3");
+	response.add_array("Group", "1", {std::make_pair("A", "B")});
+	response.add_array("Group", "2", {std::make_pair("C", "D")});
+
+	auto val = response.get_array("Group");
+
+	for(auto outer : val)
+	{
+		std::cout<<outer.first<<std::endl;
+		for(auto&& inner : outer.second)
+		{
+			std::cout<<inner.first<<"   :   "<<inner.second<<std::endl;
+		}
+	}
+
+	std::cout<<get_string_json(response._json)<<std::endl;
+
+	return EXIT_SUCCESS;
 
 	asio::io_service service;
 
