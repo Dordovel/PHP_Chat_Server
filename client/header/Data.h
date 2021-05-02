@@ -1,31 +1,33 @@
 //
-// Created by dordovel on 29.04.2021.
+// Created by dordovel on 02.05.2021.
 //
 
-#ifndef CLIENT_DATA_H
-#define CLIENT_DATA_H
+#ifndef EXECUTABLE_DATA_H
+#define EXECUTABLE_DATA_H
 
-#include <unordered_map>
-#include <memory>
-#include <vector>
 
-#include <boost/property_tree/ptree.hpp>
+#include <string>
+#include "Json.h"
 
 class Data
 {
-	public:
-		boost::property_tree::ptree _json;
+	private:
+		std::string _file;
+
+		Json _json;
 
 	public:
-		void add_array(std::string_view nodeKey,
-				        std::string_view key,
-				        const std::vector<std::pair<std::string, std::string>>& value) noexcept;
+		Data();
+		Data(std::string);
 
-		void add_value(std::string_view key, std::string_view value) noexcept;
+		std::string get() const noexcept;
+		void set(std::string json) noexcept;
 
-		std::unordered_map<std::string, std::vector<std::pair<std::string, std::string>>> get_array(std::string_view key) noexcept;
-		std::string get_value(std::string_view key) noexcept;
+		std::string decode_value(const std::string& key);
+		Decoder::Array decode_array(const std::string& key);
+
+		void encode_value(const std::string& key, const std::string& value);
+		void encode_array(const std::string& key, const Encoder::Array& array);
 };
 
-
-#endif //CLIENT_DATA_H
+#endif //EXECUTABLE_DATA_H
