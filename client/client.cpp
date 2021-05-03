@@ -5,6 +5,8 @@
 #include "adapter/header/Ssl.h"
 #include "header/Data.h"
 
+#include "header/Client.h"
+
 namespace asio = boost::asio;
 
 struct ServerAddr
@@ -37,20 +39,25 @@ asio::ip::tcp::socket connect(asio::io_service& service, ServerAddr address)
 
 int main()
 {
+	Client connection(address.addr, address.port);
+	connection.init_handshake();
+
+	return EXIT_SUCCESS;
+
 	Ssl ssl;
 	auto rsaKeys = ssl.ssl_keys();
 	std::string privKey = rsaKeys["PRIVATE"];
 	std::string pubKey = rsaKeys["PUBLIC"];
 
 	Data responce;
-	responce.encode_value("Type", "3");
-	responce.encode_value("Key", pubKey);
+	responce.add_value("Type", "3");
+	responce.add_value("Key", pubKey);
 
 	asio::io_service service;
 
 	asio::ip::tcp::socket socket = connect(service, address);
 
-	asio::write(socket, asio::buffer(responce.get()));
+	asio::write(socket, asio::buffer(responce.get_data()));
 
 	socket.wait(asio::socket_base::wait_read);
 
@@ -61,9 +68,9 @@ int main()
 	std::stringstream s;
 	s << &buffer;
 
-	responce.set(s.str());
+	responce.set_data(s.str());
 
-	std::cout<<"Server Key->"<<responce.decode_value("Key")<<std::endl;
+	std::cout << "Server Key->" << responce.get_value("Key") << std::endl;
 
 	return EXIT_SUCCESS;
 }

@@ -33,22 +33,22 @@ Data::Data()
 
 Data::Data(std::string json): _file(std::move(json)) {}
 
-std::string Data::get() const noexcept
+std::string Data::get_data() const noexcept
 {
 	return this->_file;
 }
 
-void Data::set(std::string json) noexcept
+void Data::set_data(std::string json) noexcept
 {
 	this->_file = std::move(json);
 }
 
-std::string Data::decode_value(const std::string &key)
+std::string Data::get_value(const std::string &key) const
 {
 	return base64_decode(this->_json.decode_value(this->_file, key));
 }
 
-Decoder::Array Data::decode_array(const std::string &key)
+Decoder::Array Data::get_array(const std::string &key) const
 {
 	Encoder::Array copy = this->_json.decode_array(this->_file, key);;
 
@@ -62,13 +62,13 @@ Decoder::Array Data::decode_array(const std::string &key)
 	return copy;
 }
 
-void Data::encode_value(const std::string &key, const std::string &value)
+void Data::add_value(const std::string &key, const std::string &value)
 {
 	decltype(value) copy = base64_encode(value);
 	this->_file = this->_json.encode_value(this->_file, key, copy);
 }
 
-void Data::encode_array(const std::string& key, const Encoder::Array &array)
+void Data::add_array(const std::string& key, const Encoder::Array &array)
 {
 	Encoder::Array copy = array;
 	for(auto& object : copy)

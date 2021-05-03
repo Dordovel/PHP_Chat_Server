@@ -14,8 +14,8 @@ class Decoder
 		using Node = std::unordered_map<std::string, std::string>;
 		using Array = std::vector<Node>;
 
-		std::string decode_value(const std::string& json, const std::string& key);
-		Decoder::Array decode_array(const std::string& json, const std::string& key);
+		std::string decode_value(const std::string& json, const std::string& key) const;
+		Decoder::Array decode_array(const std::string& json, const std::string& key) const;
 };
 
 #endif //EXECUTABLE_DECODER_H

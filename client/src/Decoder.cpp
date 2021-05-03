@@ -58,7 +58,7 @@ namespace
 	}
 }
 
-Decoder::Array Decoder::decode_array(const std::string &json, const std::string &key)
+Decoder::Array Decoder::decode_array(const std::string &json, const std::string &key) const
 {
 	using namespace rapidjson;
 
@@ -71,7 +71,7 @@ Decoder::Array Decoder::decode_array(const std::string &json, const std::string 
 	return decode_json_array(root[value]);
 }
 
-std::string Decoder::decode_value(const std::string &json, const std::string &key)
+std::string Decoder::decode_value(const std::string &json, const std::string &key) const
 {
 	using namespace rapidjson;
 	Document root = create_document(json);

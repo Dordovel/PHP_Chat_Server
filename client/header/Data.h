@@ -9,7 +9,10 @@
 #include <string>
 #include "Json.h"
 
-class Data
+#include "../interface/IData.h"
+#include "../interface/IGetter.h"
+
+class Data : public IData, public IGetter
 {
 	private:
 		std::string _file;
@@ -20,14 +23,14 @@ class Data
 		Data();
 		Data(std::string);
 
-		std::string get() const noexcept;
-		void set(std::string json) noexcept;
+		std::string get_data() const noexcept override;
+		void set_data(std::string json) noexcept;
 
-		std::string decode_value(const std::string& key);
-		Decoder::Array decode_array(const std::string& key);
+		std::string get_value(const std::string& key) const override;
+		Decoder::Array get_array(const std::string& key) const override;
 
-		void encode_value(const std::string& key, const std::string& value);
-		void encode_array(const std::string& key, const Encoder::Array& array);
+		void add_value(const std::string& key, const std::string& value) override;
+		void add_array(const std::string& key, const Encoder::Array& array) override;
 };
 
 #endif //EXECUTABLE_DATA_H

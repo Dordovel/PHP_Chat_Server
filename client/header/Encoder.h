@@ -14,8 +14,8 @@ class Encoder
 		using Node = std::unordered_map<std::string, std::string>;
 		using Array = std::vector<Node>;
 
-		std::string encode_value(const std::string& json, const std::string& key, const std::string& value);
-		std::string encode_array(const std::string& json, const std::string& key, const Array& array);
+		std::string encode_value(const std::string& json, const std::string& key, const std::string& value) const;
+		std::string encode_array(const std::string& json, const std::string& key, const Array& array) const;
 };
 
 #endif //EXECUTABLE_ENCODER_H

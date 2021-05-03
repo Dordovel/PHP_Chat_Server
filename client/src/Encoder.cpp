@@ -37,7 +37,7 @@ namespace
 
 std::string Encoder::encode_value(const std::string &json,
 								  const std::string &key,
-								  const std::string &value)
+								  const std::string &value) const
 {
 	using namespace rapidjson;
 
@@ -54,7 +54,7 @@ std::string Encoder::encode_value(const std::string &json,
 
 std::string Encoder::encode_array(const std::string &json,
                                   const std::string &key,
-								  const std::vector <std::unordered_map<std::string, std::string>> &array)
+								  const std::vector <std::unordered_map<std::string, std::string>> &array) const
 {
 	using namespace rapidjson;
 

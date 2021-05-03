@@ -64,6 +64,10 @@ class Query
 			                script + " " + params +
 			                " " + create_query_param(std::forward<T>(argv)...);
 
+	#ifdef DEBUG
+			printf("Query %s\n", q.c_str());
+	#endif
+
 			return q;
 		}
 
