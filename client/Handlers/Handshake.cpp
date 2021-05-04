@@ -26,11 +26,11 @@ std::string Handshake::handle(const IData* const request)
 	if(!json->isset("Type") || !json->isset("Key"))
 		return res;
 
-	int value = (*json)["Type"].integer();
+	int value = (*json)["Type"].Int();
 
 	Type type = static_cast<Type>(value);
 	if(type == Type::HANDSHAKE)
-		res = (*json)["Key"].str();
+		res = (*json)["Key"].Str();
 
 	return res;
 }

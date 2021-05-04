@@ -70,7 +70,7 @@ int main()
 
 	auto response = Data(s.str()).decode();
 
-	std::cout << "Server Key->" << (*response)["Key"].str() << std::endl;
+	std::cout << "Server Key->" << (*response)["Key"].Str() << std::endl;
 
 	return EXIT_SUCCESS;
 }

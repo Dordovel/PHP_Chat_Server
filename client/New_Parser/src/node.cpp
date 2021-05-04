@@ -18,6 +18,32 @@ namespace
 	}
 }
 
+namespace
+{
+	std::vector<std::string> keys_array(Value* value)
+	{
+		auto array = value->GetArray();
+		std::vector<std::string> keys;
+
+		auto size = array.Size();
+		for(decltype(size) i = 0; i < size; ++i)
+			keys.emplace_back(std::to_string(i));
+
+		return keys;
+	}
+
+	std::vector<std::string> keys_object(Value* value)
+	{
+		auto object = value->GetObject();
+		std::vector<std::string> keys;
+
+		for(auto& val : object)
+			keys.emplace_back(val.name.GetString());
+
+		return keys;
+	}
+}
+
 Node::Node(void* value, void* alloc)
 {
 	this->_value = value;
@@ -73,13 +99,13 @@ Node Node::operator[](const char* key) const
 	return node;
 }
 
-void Node::operator =(const std::string& value)
+void Node::operator =(const Node::StringType& value)
 {
 	Value* node = cast(this->_value);
 	node->SetString(value.c_str(), value.size());
 }
 
-void Node::operator =(const std::vector<std::string>& data)
+void Node::operator =(const Node::ArrayType& data)
 {
 	Value* node = cast(this->_value);
 	auto* allocator = alloc(this->_alloc);
@@ -93,73 +119,62 @@ void Node::operator =(const std::vector<std::string>& data)
 	}
 }
 
-void Node::operator =(const Node::List& data)
+void Node::operator =(const Node::ObjectType& data)
 {
 	Value* node = cast(this->_value);
 	auto* allocator = alloc(this->_alloc);
 
-	auto&& array = node->GetArray();
-
-	for(auto& inner : data)
+	if(node->IsArray())
 	{
 		Value object(kObjectType);
 
-		for(auto& elem : inner)
+		for(auto&& value : data)
 		{
-			Value vKey(elem.first.c_str(), elem.first.size(), *allocator);
-			Value vValue(elem.second.c_str(), elem.second.size(), *allocator);
+			Value first(value.first.c_str(), value.first.size(), *allocator);
+			Value second(value.second.c_str(), value.second.size(), *allocator);
 
-			object.AddMember(vKey, vValue, *allocator);
+			object.AddMember(first, second, *allocator);
 		}
 
-		array.PushBack(object, *allocator);
+		node->GetArray().PushBack(object, *allocator);
+	}
+
+	else if(node->IsObject())
+	{
+		auto object = node->GetObject();
+		object.RemoveAllMembers();
+
+		for(auto&& value : data)
+		{
+			Value first(value.first.c_str(), value.first.size(), *allocator);
+			Value second(value.second.c_str(), value.second.size(), *allocator);
+
+			object.AddMember(first, second, *allocator);
+		}
 	}
 }
 
-std::string Node::str()
+std::string Node::Str()
 {
 	Value* value = cast(this->_value);
 	return value->GetString();
 }
 
-int Node::integer()
+int Node::Int()
 {
 	Value* value = cast(this->_value);
 	return value->GetInt();
 }
 
-std::unordered_map<std::string, std::string> get_object(const Value& value)
+Node::ObjectType Node::Object()
 {
 	std::unordered_map<std::string, std::string> res;
 
-	auto object = value.GetObject();
+	Value* value = cast(this->_value);
+	auto object = value->GetObject();
 
 	for(auto&& field : object)
 		res.emplace(field.name.GetString(), field.value.GetString());
-
-	return res;
-}
-
-std::vector<std::unordered_map<std::string, std::string>> Node::array()
-{
-	std::vector<std::unordered_map<std::string, std::string>> res;
-
-	Value* value = cast(this->_value);
-	auto array = value->GetArray();
-
-	auto size = array.Size();
-	for(decltype(size) i = 0; i < size; ++i)
-	{
-		if(array[i].IsObject())
-		{
-			res.emplace_back(get_object(array[i]));
-		}
-		else
-		{
-			auto f = std::make_pair(std::to_string(i), std::string(array[i].GetString()));
-			res.emplace_back(decltype(res)::value_type{std::move(f)});
-		}
-	}
 
 	return res;
 }
@@ -169,28 +184,6 @@ ValueType Node::type() const
 	return static_cast<ValueType>(cast(this->_value)->GetType());
 }
 
-std::vector<std::string> keys_array(Value* value)
-{
-	auto array = value->GetArray();
-	std::vector<std::string> keys;
-
-	auto size = array.Size();
-	for(decltype(size) i = 0; i < size; ++i)
-		keys.emplace_back(std::to_string(i));
-
-	return keys;
-}
-
-std::vector<std::string> keys_object(Value* value)
-{
-	auto object = value->GetObject();
-	std::vector<std::string> keys;
-
-	for(auto& val : object)
-		keys.emplace_back(val.name.GetString());
-
-	return keys;
-}
 
 std::vector<std::string> Node::keys() const
 {
@@ -213,12 +206,25 @@ Node Node::create(const std::string& key, ValueType type)
 	auto allocator = alloc(this->_alloc);
 
 	Value vKey(key.c_str(), key.size(), *allocator);
-
 	Value vValue(rapidjson::Type(static_cast<int>(type)));
 
 	value->AddMember(vKey, vValue, *allocator);
 
 	return (*this)[key];
+}
+
+Node Node::create(ValueType type)
+{
+	Value* value = cast(this->_value);
+
+	auto allocator = alloc(this->_alloc);
+
+	Value vValue(rapidjson::Type(static_cast<int>(type)));
+
+	auto array = value->GetArray();
+	array.PushBack(vValue, *allocator);
+
+	return (*this)[array.Size() - 1];
 }
 
 bool Node::isset(const std::string& key) const

@@ -24,9 +24,12 @@ class Node
 		void* _value;
 		void* _alloc;
 
-		using List = std::vector<std::unordered_map<std::string, std::string>>;
-
 	public:
+
+		using ObjectType = std::unordered_map<std::string, std::string>;
+		using ArrayType = std::vector<std::string>;
+		using StringType = std::string;
+
 		Node(void* value, void* alloc);
 		Node operator[](const std::string& key);
 		Node operator[](const char* key);
@@ -36,18 +39,19 @@ class Node
 		Node operator[](const char* key) const;
 		Node operator[](int key) const;
 
-		void operator =(const std::string& value);
-		void operator =(const std::vector<std::string>& data);
-		void operator =(const Node::List& data);
+		void operator =(const Node::StringType& value);
+		void operator =(const Node::ArrayType& data);
+		void operator =(const Node::ObjectType& data);
 
-		std::string str();
-		int integer();
-		List array();
+		std::string Str();
+		int Int();
+		ObjectType Object();
 		ValueType type() const;
 
 		std::vector<std::string> keys() const;
 
 		Node create(const std::string& key, ValueType type);
+		Node create(ValueType type);
 		bool isset(const std::string& key) const;
 		~Node();
 };

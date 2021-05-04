@@ -31,15 +31,18 @@ int main()
 	std::string jFile = "{\n\t\"name\": [{ \"first\": \"Name\"}], \"value\":\"Hello\" \n}";
 	Json json(jFile);
 	std::cout<<json.get()<<std::endl;
+
 	Node node = json.create("array", ValueType::ArrayType);
 	node = std::vector<std::string>{"1", "2", "3", "4"};
-	Node node1 = json.create("node", ValueType::ArrayType);
-	std::vector<std::unordered_map<std::string, std::string>> array;
-	array.emplace_back(decltype(array)::value_type{std::make_pair("first", "First")});
-	array.emplace_back(decltype(array)::value_type{std::make_pair("Second", "Second")});
 
-	node1 = array;
-	document_keys(json);
+	Node::ObjectType array;
+	array.emplace(std::make_pair("first", "First"));
+	array.emplace(std::make_pair("second", "Second"));
+
+	auto pointer = node.create(ValueType::ObjectType);
+	pointer = array;
+	std::cout<<node[4]["Second"].Str()<<std::endl;
+
 	std::cout<<json.get()<<std::endl;
 	return 0;
 }
