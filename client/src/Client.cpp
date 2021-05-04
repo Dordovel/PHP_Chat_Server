@@ -24,10 +24,11 @@ void Client::init_handshake()
 	Handshake handshake;
 
 	auto request = handshake.execute(this->_connection->get_client_key());
-	this->_connection->write(request->get_data());
+	this->_connection->write(request->encode());
 	this->_connection->wait_read();
-	Data responce = this->_connection->read();
-	std::string serverKey = handshake.handle(&responce);
+	std::string data = this->_connection->read();
+	Data response(data);
+	std::string serverKey = handshake.handle(&response);
 
 	this->_connection->set_server_key(serverKey);
 

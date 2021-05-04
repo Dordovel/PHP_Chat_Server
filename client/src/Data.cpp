@@ -26,58 +26,21 @@ namespace
 
 };
 
-Data::Data()
+Data::Data(const std::string& json): _json(json) {}
+
+Data::Data(Json json): _json(std::move(json)){}
+
+std::string Data::encode() const noexcept
 {
-	this->_file = this->_json.create();
+	return this->_json.get();
 }
 
-Data::Data(std::string json): _file(std::move(json)) {}
-
-std::string Data::get_data() const noexcept
+std::string Data::encode(const Json& json) const noexcept
 {
-	return this->_file;
+	return json.get();
 }
 
-void Data::set_data(std::string json) noexcept
+const Json* const Data::decode() const noexcept
 {
-	this->_file = std::move(json);
-}
-
-std::string Data::get_value(const std::string &key) const
-{
-	return base64_decode(this->_json.decode_value(this->_file, key));
-}
-
-Decoder::Array Data::get_array(const std::string &key) const
-{
-	Encoder::Array copy = this->_json.decode_array(this->_file, key);;
-
-	for(auto& object : copy)
-	{
-		for(auto& field : object)
-		{
-			field.second = base64_decode(field.second);
-		}
-	}
-	return copy;
-}
-
-void Data::add_value(const std::string &key, const std::string &value)
-{
-	decltype(value) copy = base64_encode(value);
-	this->_file = this->_json.encode_value(this->_file, key, copy);
-}
-
-void Data::add_array(const std::string& key, const Encoder::Array &array)
-{
-	Encoder::Array copy = array;
-	for(auto& object : copy)
-	{
-		for(auto& field : object)
-		{
-			field.second = base64_encode(field.second);
-		}
-	}
-
-	this->_file = this->_json.encode_array(this->_file, key, copy);
+	return &this->_json;
 }

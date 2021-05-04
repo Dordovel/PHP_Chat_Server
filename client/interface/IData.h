@@ -7,16 +7,14 @@
 
 #include <string>
 
+class Json;
+
 class IData
 {
 	public:
 
-		virtual std::string get_value(const std::string& key) const = 0;
-		virtual Decoder::Array get_array(const std::string& key) const = 0;
-
-		virtual void add_value(const std::string& key, const std::string& value) = 0;
-		virtual void add_array(const std::string& key, const Encoder::Array& array) = 0;
-
+		virtual std::string encode() const noexcept = 0;
+		virtual const Json* const decode() const noexcept = 0;
 		virtual ~IData() = default;
 };
 
