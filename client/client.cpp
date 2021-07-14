@@ -57,7 +57,7 @@ int main()
 
 	asio::ip::tcp::socket socket = connect(service, address);
 
-	asio::write(socket, asio::buffer(Data(request).encode()));
+	asio::write(socket, asio::buffer(Data(std::move(request)).encode()));
 
 	socket.wait(asio::socket_base::wait_read);
 

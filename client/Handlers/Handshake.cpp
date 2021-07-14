@@ -12,7 +12,7 @@ std::unique_ptr<IData> Handshake::execute(const std::string& key)
 	json.create("Type", ValueType::StringType) = std::to_string(static_cast<int>(Type::HANDSHAKE));
 	json.create("Key", ValueType::StringType) = key;
 
-	std::unique_ptr<Data> data = std::make_unique<Data>(json);
+	std::unique_ptr<Data> data = std::make_unique<Data>(std::move(json));
 
 	return data;
 }
