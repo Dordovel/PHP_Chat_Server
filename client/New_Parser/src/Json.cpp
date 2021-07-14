@@ -37,14 +37,14 @@ Json::Json(const std::string& json)
 
 Json::Json(Json&& json)
 {
-	this->_document = json._document;
-	json._document = nullptr;
+	this->clean();
+	std::swap(this->_document, json.document);
 }
 
 Json& Json::operator = (Json&& json)
 {
-	this->_document = json._document;
-	json._document = nullptr;
+	this->clean();
+	std::swap(this->_document, json.document);
 
 	return *this;
 }
@@ -124,10 +124,15 @@ std::string Json::get() const
 	return std::string(buffer.GetString());
 }
 
-Json::~Json()
+void clean()
 {
 	Document* document = cast(this->_document);
 	if(document) delete document;
 
 	this->_document = nullptr;
+}
+
+Json::~Json()
+{
+	this->clean();
 }

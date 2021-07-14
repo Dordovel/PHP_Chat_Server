@@ -61,12 +61,14 @@ class Json
 {
 	private:
 		void* _document;
+
+		void clean();
 	public:
 		Json();
 		Json(const std::string& json);
 
-		Json(const Json&) = default;
-		Json& operator = (const Json&) = default;
+		Json(const Json&) = delete;
+		Json& operator = (const Json&) = delete;
 
 		Json(Json&& json);
 		Json& operator = (Json&& json);
